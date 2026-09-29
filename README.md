@@ -2,6 +2,9 @@
 
 A clean, informative in-game scoreboard for FiveM. UI is built in **vanilla HTML/CSS/JS** and all logic is written in **JavaScript** (the only `.lua` file is `fxmanifest.lua`, which FiveM requires to load any resource — it contains no logic).
 
+<img width="286" height="575" alt="image" src="https://github.com/user-attachments/assets/4457d8fe-910b-4e56-8760-07ae344941ec" />
+
+
 Resource folder name: **`jinn-playerlist`** (used in all export calls below).
 
 ---
