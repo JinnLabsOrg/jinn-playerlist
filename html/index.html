@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Jinn Scoreboard</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <div id="scoreboard" class="scoreboard hidden">
+
+        <header class="sb-header">
+            <div class="brand">
+                <h1 class="brand-title">
+                    <span id="brandPrimary">JINN</span>
+                    <span id="brandAccent" class="accent">SCOREBOARD</span>
+                </h1>
+                <p id="brandSubtitle" class="brand-sub">Playerlist</p>
+            </div>
+            <div class="server-id">
+                <span class="server-id-label">Server ID</span>
+                <div class="server-id-badge">
+                    <span class="dot"></span>
+                    <span id="serverId">1</span>
+                </div>
+            </div>
+        </header>
+
+        <nav class="main-tabs">
+            <button class="main-tab active" data-view="players">
+                <i class="fa-solid fa-users"></i> Players
+            </button>
+            <button class="main-tab" data-view="jobs">
+                <i class="fa-solid fa-briefcase"></i> Jobs
+            </button>
+        </nav>
+
+        <section class="view view-players active" data-view="players">
+            <nav class="sub-tabs">
+                <button class="sub-tab active" data-sub="online">
+                    Online <span class="count-pill" id="countOnline">0</span>
+                </button>
+                <button class="sub-tab" data-sub="recent">
+                    Recent <span class="count-pill" id="countRecent">0</span>
+                </button>
+                <button class="sub-tab" data-sub="nearby">
+                    Nearby <span class="count-pill" id="countNearby">0</span>
+                </button>
+            </nav>
+
+            <div class="sub-view-wrap">
+                <div class="sub-view active" data-sub="online">
+                    <div class="player-list" id="onlineList"></div>
+                </div>
+                <div class="sub-view" data-sub="recent">
+                    <div class="player-list" id="recentList"></div>
+                </div>
+                <div class="sub-view nearby-view" data-sub="nearby">
+                    <div class="nearby-box">
+                        <i class="fa-solid fa-users nearby-icon"></i>
+                        <div class="nearby-count" id="nearbyBig">00</div>
+                        <div class="nearby-label">Entities in proximity</div>
+                        <div class="nearby-divider"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="view view-jobs" data-view="jobs">
+            <div class="jobs-head">
+                <span class="jobs-head-title">Job personnel status</span>
+                <div class="active-duty">
+                    <span class="active-duty-label">Active duty</span>
+                    <div class="active-duty-badge">
+                        <i class="fa-solid fa-user"></i>
+                        <span id="activeDuty">0</span>
+                    </div>
+                </div>
+            </div>
+            <div class="jobs-list" id="jobsList"></div>
+        </section>
+
+        <footer class="sb-footer">
+            <div class="footer-card" id="footerTotal">
+                <span class="footer-label">Total</span>
+                <div class="footer-value">
+                    <span id="totalOnline">0</span>
+                    <span class="footer-sub">/ <span id="totalMax">128</span></span>
+                </div>
+                <div class="footer-bar"><div class="footer-bar-fill" id="totalBar"></div></div>
+            </div>
+            <div class="footer-card" id="footerNearby">
+                <span class="footer-label">Nearby <span class="footer-dot"></span></span>
+                <div class="footer-value"><span id="footerNearbyVal">0</span></div>
+                <div class="footer-bar"><div class="footer-bar-fill" id="nearbyBar"></div></div>
+            </div>
+        </footer>
+
+        <div class="sb-hint" id="sbHint">Press Alt to lock / unlock cursor</div>
+    </div>
+
+    <script src="../config.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
